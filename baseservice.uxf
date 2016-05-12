@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>240</y>
+      <w>750</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+IShortURLService
+短连接接口
+--
+-createShortURL(shortURLBean : ShortURLBean) : String
+-createShortURL(originalURL : String) : String
+-createShortURL(originalURL : String ,validVisitTimes : int) : String
+-createShortURL(String originalURL,Date startValidTime,int minute) : String
+-getShortURLByShortCode(shortCode : String) : ShortURLBean
+-updateVisitendTimes(shortCode : String) : boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>20</y>
+      <w>750</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+ICaptchaService
+验证码接口
+--
+-createCaptcha(captchaBean : CaptchaBean) : CaptchaBeanResult
+-createCaptcha() : CaptchaBeanResult 
+-createCaptcha(isDigit : boolean) : CaptchaBeanResult
+-verifyCaptcha(captchaId : Long,inputCaptchaCode : String) : boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
