@@ -1,4 +1,4 @@
-create table t_captcha(
+create table t_base_captcha(
 	captchaId int auto_increment,
 	captchaCode varchar(128),
 	status tinyint comment '10=未使用,20=已使用',

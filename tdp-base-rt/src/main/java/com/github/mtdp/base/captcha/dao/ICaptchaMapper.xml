@@ -5,29 +5,29 @@
 	
 		<select id="get" resultType="Captcha">
 			select *
-			from t_captcha
+			from t_base_captcha
 			where captchaId=#{captchaId}
 		</select>
 		
 		<select id="gets" resultType="Captcha">
 			select *
-			from t_captcha
+			from t_base_captcha
 		</select>
 		
 		<!-- 根据短url地址查询 -->
 		<select id="getByCaptchaCode" resultType="Captcha">
 			select *
-			from t_captcha
+			from t_base_captcha
 			where captchaCode=#{captchaCode}
 		</select>
 		
 		<delete id="del">
-			delete from t_captcha where captchaId=#{captchaId}
+			delete from t_base_captcha where captchaId=#{captchaId}
 		</delete>
 		
 		<!-- keyProperty="shortURLId" 指定了ShortURL对象中的属性 -->
 		<insert id="add" parameterType="Captcha" keyProperty="captchaId" useGeneratedKeys="true">
-			insert into t_captcha(captchaCode
+			insert into t_base_captcha(captchaCode
 						<if test="status != null and status != ''">
 							,status
 						</if>
@@ -58,7 +58,7 @@
 		</insert>
 		
 		<update id="update" parameterType="Captcha">
-			update t_captcha set captchaId=#{captchaId}
+			update t_base_captcha set captchaId=#{captchaId}
 			<if test="captchaCode != null and captchaCode != ''">
 				,captchaCode=#{captchaCode}
 			</if>

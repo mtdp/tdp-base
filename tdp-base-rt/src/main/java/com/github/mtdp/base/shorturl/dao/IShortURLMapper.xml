@@ -5,29 +5,29 @@
 	
 		<select id="get" resultType="ShortURL">
 			select *
-			from t_short_url
+			from t_base_short_url
 			where shortURLId=#{shortURLId}
 		</select>
 		
 		<select id="gets" resultType="ShortURL">
 			select *
-			from t_short_url
+			from t_base_short_url
 		</select>
 		
 		<!-- 根据短url地址查询 -->
 		<select id="getByShortCode" resultType="ShortURL">
 			select *
-			from t_short_url
+			from t_base_short_url
 			where shortCode=#{shortCode}
 		</select>
 		
 		<delete id="del">
-			delete from t_short_url where shortURLId=#{shortURLId}
+			delete from t_base_short_url where shortURLId=#{shortURLId}
 		</delete>
 		
 		<!-- keyProperty="shortURLId" 指定了ShortURL对象中的属性 -->
 		<insert id="add" parameterType="ShortURL" keyProperty="shortURLId" useGeneratedKeys="true">
-			insert into t_short_url(shortCode
+			insert into t_base_short_url(shortCode
 						<if test="shortURLName != null and shortURLName != ''">
 							,shortURLName
 						</if>
@@ -82,7 +82,7 @@
 		</insert>
 		
 		<update id="update" parameterType="ShortURL">
-			update t_short_url set shortURLId=#{shortURLId}
+			update t_base_short_url set shortURLId=#{shortURLId}
 			<if test="shortCode != null and shortCode != ''">
 				,shortCode=#{shortCode}
 			</if>

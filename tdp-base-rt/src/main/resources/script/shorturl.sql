@@ -1,5 +1,5 @@
 #--timestamp mysql5.5,5.6 如果不设置null默认是not null 且把第一个字段默认值设置成当前时间(CURRENT_TIMESTAMP ) 5.6.6后修改
-create table t_short_url(
+create table t_base_short_url(
 	shortURLId int auto_increment,
 	shortURLName varchar(64) comment '短连接名称',
 	shortCode varchar(256) comment '短连接code',
