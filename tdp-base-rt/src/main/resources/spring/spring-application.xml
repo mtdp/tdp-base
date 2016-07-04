@@ -76,12 +76,12 @@
  		   <!-- SqlSessionFactory -->
 		   <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		    	<property name="dataSource" ref="druidDataSource" />
-		    	<property name="typeAliasesPackage" value="com.github.mtdp.base.shorturl.dao.domain,com.github.mtdp.base.captcha.dao.domain" />
+		    	<property name="typeAliasesPackage" value="com.github.mtdp.base.shorturl.dao.domain,com.github.mtdp.base.captcha.dao.domain,com.github.mtdp.base.region.dao.domain" />
 		    	<property name="configLocation" value="classpath:spring/mybatis-config.xml"/>
 		   </bean> 
 		   <!-- ScanMapperFiles -->
 		   <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		    	<property name="basePackage" value="com.github.mtdp.base.shorturl.dao,com.github.mtdp.base.captcha.dao" />
+		    	<property name="basePackage" value="com.github.mtdp.base.shorturl.dao,com.github.mtdp.base.captcha.dao,com.github.mtdp.base.region.dao" />
 		    	<property name="markerInterface" value="com.github.mtdp.persistence.BaseMapper"/>
 		   </bean>
 		   <!-- 事务配置 -->

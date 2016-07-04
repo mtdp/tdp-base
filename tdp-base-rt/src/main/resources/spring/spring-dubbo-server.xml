@@ -23,4 +23,7 @@
 	<dubbo:service interface="com.github.mtdp.base.shorturl.service.IShortURLService" ref="shortURLServiceImpl" version="1.0.0"/>
 	<!-- 验证码服务 -->
 	<dubbo:service interface="com.github.mtdp.base.captcha.service.ICaptchaService" ref="captchaServiceImpl" version="1.0.0"/>
+	<!-- 地区地址服务 -->
+	<dubbo:service interface="com.github.mtdp.base.region.service.IRegionService" ref="regionServiceImpl" version="1.0.0"/>
+	
 </beans>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.github.mtdp.base.region.dao.IRegionMapper">
+	
+		<select id="get" resultType="Region">
+			select *
+			from t_base_region
+			where regCode=#{regCode}
+		</select>
+		
+		<select id="gets" resultType="Region">
+			select *
+			from t_base_region
+		</select>
+		
+		<select id="getByRegType" resultType="Region">
+			select *
+			from t_base_region
+			where regType=#{regType}
+		</select>
+		
+		<select id="getByParentCode" resultType="Region">
+			select *
+			from t_base_region
+			where parentCode=#{parentCode}
+		</select>
+		
+		<delete id="del">
+			delete from t_base_region where regCode=#{regionCode}
+		</delete>
+		
+		<insert id="add" parameterType="Region" keyProperty="RegionCode" useGeneratedKeys="true">
+			insert into t_base_Region(regCode
+						<if test="regionName != null and regionName != ''">
+							,regName
+						</if>
+						<if test="parentCode != null and parentCode != ''">
+							,parentCode
+						</if>
+						<if test="regionType != null and regionType != ''">
+							,regType
+						</if>
+						<if test="regionMark != null and regionMark != ''">
+							,regMark
+						</if>
+						<if test="rank != null and rank != ''">
+							,rank
+						</if>
+						<if test="createTime != null and createTime != ''">
+							,createTime
+						</if>
+						<if test="updateTime != null and updateTime != ''">
+							,updateTime
+						</if>
+						) 
+						values(#{regionCode}
+						<if test="regionName != null and regionName != ''">
+							,#{regionName}
+						</if>
+						<if test="parentCode != null and parentCode != ''">
+							,#{parentCode}
+						</if>
+						<if test="regionType != null and regionType != ''">
+							,#{regionType}
+						</if>
+						<if test="regionMark != null and regionMark != ''">
+							,#{regionMark}
+						</if>
+						<if test="rank != null and rank != ''">
+							,#{rank}
+						</if>
+						<if test="createTime != null and createTime != ''">
+							,#{createTime}
+						</if>
+						<if test="updateTime != null and updateTime != ''">
+							,#{updateTime}
+						</if>
+						)
+		</insert>
+		
+		<update id="update" parameterType="Region">
+			update t_base_region 
+			<set>
+				<if test="regionName != null and regionName != ''">
+					regName=#{regionName},
+				</if>
+				<if test="parentCode != null and parentCode != ''">
+					parentCode=#{parentCode},
+				</if>
+				<if test="regionType != null and regionType != ''">
+					regType=#{regionType},
+				</if>
+				<if test="regionMark != null and regionMark != ''">
+					regMark=#{regionMark},
+				</if>
+				<if test="rank != null and rank != ''">
+					rank=#{rank},
+				</if>
+				<if test="updateTime != null and updateTime != ''">
+					updateTime=#{updateTime}
+				</if>
+			</set>
+			where regCode=#{regionCode}
+		</update>
+		
+	</mapper>
