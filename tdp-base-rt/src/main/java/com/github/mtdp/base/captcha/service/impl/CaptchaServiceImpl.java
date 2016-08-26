@@ -39,7 +39,7 @@ public class CaptchaServiceImpl implements ICaptchaService{
 	private static final Logger logger = LoggerFactory.getLogger(CaptchaServiceImpl.class);
 
 	@Autowired
-	private ICaptchaMapper<Captcha> captchaMapper;
+	private ICaptchaMapper captchaMapper;
 	
 	@Override
 	public CaptchaBeanResult createCaptcha(CaptchaBean captchaBean) {
@@ -89,7 +89,7 @@ public class CaptchaServiceImpl implements ICaptchaService{
 	@Override
 	public boolean verifyCaptcha(Long captchaId, String inputCaptchaCode) {
 		//1.根据id查询验证码
-		Captcha t = this.captchaMapper.get(String.valueOf(captchaId));
+		Captcha t = this.captchaMapper.get(captchaId);
 		//2.对比验证码是否一样
         if(!t.getCaptchaCode().equals(inputCaptchaCode)){
           return false;

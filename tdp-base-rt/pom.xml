@@ -126,6 +126,10 @@
 			<artifactId>cglib</artifactId>
 			<version>${cglib.version}</version>
 		</dependency> 
+		<dependency>
+	        <groupId>org.mybatis</groupId>
+	        <artifactId>mybatis</artifactId>
+	    </dependency>
 		<!-- dubbo -->
 		<dependency>
 			<groupId>com.alibaba</groupId>

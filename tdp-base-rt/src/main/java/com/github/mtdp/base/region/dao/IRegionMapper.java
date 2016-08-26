@@ -15,7 +15,7 @@ import com.github.mtdp.persistence.BaseMapper;
  * @date 2016年6月24日下午2:46:16
  *
  */
-public interface IRegionMapper<T extends Region> extends BaseMapper<T> {
+public interface IRegionMapper extends BaseMapper<Region,String> {
 	
 	/**
 	 * 通过地区类型查询地区信息

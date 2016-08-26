@@ -6,9 +6,9 @@ create table t_base_short_url(
 	originalURL varchar(1024) comment '原连接',
 	validVisitTimes tinyint comment '可以访问的次数,空没有限制',
 	visitedTimes tinyint default 0 comment '已经访问的次数默认值是0',
-	startValidTime timestamp null default null comment '生效时间',
-	endValidTime timestamp null default null comment '过期时间,空没有过期时间',
-	updateTime timestamp null default null,
-	createTime timestamp null default null,
+	startValidTime datetime null default null comment '生效时间',
+	endValidTime datetime null default null comment '过期时间,空没有过期时间',
+	updateTime datetime null default null,
+	createTime datetime null default null,
 	primary key(shortURLId)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;

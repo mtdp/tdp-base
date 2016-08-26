@@ -29,7 +29,7 @@ public class ShortURLServiceImpl implements IShortURLService{
 	
 	
 	@Autowired
-	private IShortURLMapper<ShortURL> shortURLMapper;
+	private IShortURLMapper shortURLMapper;
 
 	@Override
 	public String createShortURL(ShortURLBean shortURLBean) {

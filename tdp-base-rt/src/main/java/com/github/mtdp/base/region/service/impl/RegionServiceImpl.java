@@ -27,7 +27,7 @@ public class RegionServiceImpl implements IRegionService{
 	private static final Logger logger = LoggerFactory.getLogger(RegionServiceImpl.class);
 	
 	@Autowired
-	private IRegionMapper<Region> regionMapper;
+	private IRegionMapper regionMapper;
 
 	@Override
 	public List<RegionBean> getAllArea() {

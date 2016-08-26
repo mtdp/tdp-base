@@ -6,7 +6,8 @@ CREATE TABLE t_base_region(
 	regType int,
 	regMark varchar(100),
 	rank int,
-	createTime varchar(14),
-	updateTime varchar(14),
+	isEnable tinyint(4) DEFAULT '1' COMMENT '数据是否有效,1=true,0=false',
+	createTime datetime default null,
+	updateTime datetime default null,
 	PRIMARY KEY(regCode)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;

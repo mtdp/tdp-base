@@ -4,7 +4,7 @@ import com.github.mtdp.base.captcha.dao.domain.Captcha;
 import com.github.mtdp.persistence.BaseMapper;
 
 
-public interface ICaptchaMapper <T extends Captcha> extends BaseMapper<T>{
+public interface ICaptchaMapper extends BaseMapper<Captcha,Long>{
 	
 	/**
 	 * 根据captchaCode查询验证码

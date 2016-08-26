@@ -47,6 +47,9 @@
 						<if test="rank != null and rank != ''">
 							,rank
 						</if>
+						<if test="isEnable != null and isEnable != ''">
+							,isEnable
+						</if>
 						<if test="createTime != null and createTime != ''">
 							,createTime
 						</if>
@@ -69,6 +72,9 @@
 						</if>
 						<if test="rank != null and rank != ''">
 							,#{rank}
+						</if>
+						<if test="isEnable != null and isEnable != ''">
+							,#{isEnable}
 						</if>
 						<if test="createTime != null and createTime != ''">
 							,#{createTime}
@@ -96,6 +102,9 @@
 				</if>
 				<if test="rank != null and rank != ''">
 					rank=#{rank},
+				</if>
+				<if test="isEnable != null and isEnable != ''">
+					rank=#{isEnable},
 				</if>
 				<if test="updateTime != null and updateTime != ''">
 					updateTime=#{updateTime}

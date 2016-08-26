@@ -17,7 +17,7 @@ public class MapperTest extends BaseTest{
 	private static final Logger logger = LoggerFactory.getLogger(MapperTest.class);
 	
 	@Autowired
-	private IShortURLMapper<ShortURL> shortURLMapper;
+	private IShortURLMapper shortURLMapper;
 	
 	
 	@Test
@@ -35,7 +35,7 @@ public class MapperTest extends BaseTest{
 	
 	@Test
 	public void testGet(){
-		ShortURL t = this.shortURLMapper.get("1");
+		ShortURL t = this.shortURLMapper.get(1L);
 		logger.info("***********************t="+t);
 	}
 	

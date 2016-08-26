@@ -1,6 +1,7 @@
 package com.github.mtdp.base.region.dao.domain.tbl;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 
@@ -20,8 +21,9 @@ public class RegionTbl implements Serializable{
 	private Integer regType;
 	private String regMark;
 	private Integer rank;
-	private String createTime;
-	private String updateTime;
+	private boolean isEnable;
+	private Date createTime;
+	private Date updateTime;
 	
 	public String getRegCode() {
 		return regCode;
@@ -59,17 +61,23 @@ public class RegionTbl implements Serializable{
 	public void setRank(Integer rank) {
 		this.rank = rank;
 	}
-	public String getCreateTime() {
+	public boolean isEnable() {
+		return isEnable;
+	}
+	public void setEnable(boolean isEnable) {
+		this.isEnable = isEnable;
+	}
+	public Date getCreateTime() {
 		return createTime;
 	}
-	public void setCreateTime(String createTime) {
+	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
-	public String getUpdateTime() {
+	public Date getUpdateTime() {
 		return updateTime;
 	}
-	public void setUpdateTime(String updateTime) {
+	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
 	}
-
+	
 }
