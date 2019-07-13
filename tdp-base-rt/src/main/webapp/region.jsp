@@ -19,8 +19,8 @@
 			<option value="-1">--请选择--</option>
 		</select>
 		<script type="text/javascript">
-			var allAreaURL = 'http://192.168.10.115:8080/tdp-base/region/getAllArea';
-			var pURL = 'http://192.168.10.115:8080/tdp-base/region/getRegionByParentCode';
+			var allAreaURL = 'http://127.0.0.1:8080/tdp-base/region/getAllArea';
+			var pURL = 'http://127.0.0.1:8080/tdp-base/region/getRegionByParentCode';
 			var tOpt = '<option value="-1">--请选择--</option>';
 			//页面加载完成请求区域数据
 			$.ajax({

@@ -26,6 +26,12 @@ public interface IRegionService{
 	public List<RegionBean> getAllProvince();
 	
 	/**
+	 * 获取所有城市
+	 * @return
+	 */
+	public List<RegionBean> getAllCity();
+	
+	/**
 	 * 通过parentCode获取数据
 	 * @param parentCode
 	 * @return

@@ -31,7 +31,7 @@ public class RegionServiceImpl implements IRegionService{
 
 	@Override
 	public List<RegionBean> getAllArea() {
-		logger.info("获取所有区域");
+		logger.debug("获取所有区域");
 		List<RegionBean> regBeans = new ArrayList<RegionBean>();
 		List<Region> regs = this.regionMapper.getByRegType(BaseServiceConstantsCode.REGION_AREA_TYPE);
 		for(Region r : regs){
@@ -47,7 +47,7 @@ public class RegionServiceImpl implements IRegionService{
 	
 	@Override
 	public List<RegionBean> getAllProvince() {
-		logger.info("获取所有省份");
+		logger.debug("获取所有省份");
 		List<RegionBean> regBeans = new ArrayList<RegionBean>();
 		List<Region> regs = this.regionMapper.getByRegType(BaseServiceConstantsCode.REGION_PROVINCE_TYPE);
 		for(Region r : regs){
@@ -60,10 +60,28 @@ public class RegionServiceImpl implements IRegionService{
 		}
 		return regBeans;
 	}
+	
+	@Override
+	public List<RegionBean> getAllCity() {
+		logger.debug("获取所有城市");
+		List<RegionBean> regBeans = new ArrayList<RegionBean>();
+		List<Region> regs = this.regionMapper.getByRegType(BaseServiceConstantsCode.REGION_CITY_TYPE);
+		for(Region r : regs){
+			RegionBean e = new RegionBean();
+			e.setRegCode(r.getRegCode());
+			e.setParentCode(r.getParentCode());
+			e.setRegName(r.getRegName());
+			e.setRegType(r.getRegType());
+			regBeans.add(e);
+		}
+		return regBeans;
+	}
+	
+	
 
 	@Override
 	public List<RegionBean> getRegionByParentCode(String parentCode) {
-		logger.info("获取同一parentCode的地址数据,parentCode={}",parentCode);
+		logger.debug("获取同一parentCode的地址数据,parentCode={}",parentCode);
 		List<RegionBean> regBeans = new ArrayList<RegionBean>();
 		List<Region> regs = this.regionMapper.getByParentCode(parentCode);
 		for(Region r : regs){

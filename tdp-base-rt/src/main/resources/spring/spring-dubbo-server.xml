@@ -10,7 +10,7 @@
 
 	<dubbo:application name="tdp-base" owner="wangguoqing" organization="mtdp"/>
 
-	<dubbo:registry timeout="15000" id="service" protocol="${dubbo.registry.protocol}" file="${user.home}/.dubbo-cache/provider-base-rt" address="${dubbo.registry.address}" group="dubbo-online" check="false" />
+	<dubbo:registry timeout="15000" id="service" protocol="${dubbo.registry.protocol}" file="${user.home}/.dubbo-cache/provider-base-rt" address="${dubbo.registry.address}" group="${dubbo.env.path}" check="false" />
 	
 	<dubbo:protocol port="1${env.num}${dubbo.port}" name="${dubbo.protocol.name}" threadpool="${dubbo.protocol.threadpool}" threads="${dubbo.protocol.threads}" />
 	

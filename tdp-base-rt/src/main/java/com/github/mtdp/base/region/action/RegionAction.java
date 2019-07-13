@@ -33,7 +33,7 @@ public class RegionAction {
 	@RequestMapping("/getAllArea")
 	@ResponseBody
 	public List<RegionBean> getAllArea(){
-		logger.info("获取所有区域");
+		logger.debug("获取所有区域");
 		List<RegionBean> regBeans = this.regionService.getAllArea();
 		return regBeans;
 	}
@@ -41,7 +41,7 @@ public class RegionAction {
 	@RequestMapping("/getAllProvince")
 	@ResponseBody
 	public List<RegionBean> getAllProvince(){
-		logger.info("获取所有省份");
+		logger.debug("获取所有省份");
 		List<RegionBean> regBeans = this.regionService.getAllProvince();
 		return regBeans;
 	}
@@ -51,7 +51,7 @@ public class RegionAction {
 	@RequestMapping("/getRegionByParentCode/{parentCode}")
 	@ResponseBody
 	public List<RegionBean> getRegionByParentCode(@PathVariable String parentCode){
-		logger.info("通过parentCode获取地区数据,parentCode={}",parentCode);
+		logger.debug("通过parentCode获取地区数据,parentCode={}",parentCode);
 		List<RegionBean> regBeans = this.regionService.getRegionByParentCode(parentCode);
 		return regBeans;
 	}
